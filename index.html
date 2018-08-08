@@ -2,43 +2,16 @@
 <html>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script> 
+    <script src="script.js" async></script>
     <head>
         <title>Etch a Sketch</title>
     </head>
     <body>
-        <div id="buttons">
-            <button onclick="clearGrid()" id="clear">Clear</button>
+        <p>Etch a Sketch</p>
+        <div id="container" class="container">
         </div>
-        <div id="container">
-
+        <div id="buttons">
+            <button id="newGrid">Reset Grid</button>
         </div>
     </body>
 </html>
-
-<script>
-    $(document).ready(function() {
-        for (var i = 0; i < 16; i++) {
-            for (var j = 0; j < 16; j++) {
-                var unit = $("<div class='unit' id='cell' onmouseover='this.style.background=\"white\"'></div>");
-                unit.appendTo('#container');
-            }
-        }
-    });
-
-    function clearGrid() {
-
-        console.log("Removing...");
-
-        $( ".unit" ).remove();
-
-        var squares = prompt("How many squares would you like for both sides?");
-        
-        for (var i = 0; i < squares; i++) {
-            for (var j = 0; j < squares; j++) {
-                var unit = $("<div class='unit'></div>");
-                unit.appendTo('#container');
-            }
-        }
-    }
-
-</script>
